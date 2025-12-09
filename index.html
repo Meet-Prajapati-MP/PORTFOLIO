@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Add this in the <head> of your HTML -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-papLF++0e1BXRcUle8W3CH0HJqqHzMyjZ8p9ocBUNsSlxOeBGfV8qxmdL0pA1KEBqUyyzN0CQqZK4WIGmj0J/w=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo"><span class="blue">Port</span>folio</div>
+    
+    <nav id="navbar" class="nav">
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link active-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#Skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="mobile-download">
+       
+
+        <a href="resume.pdf" download class="nav-link">Download Resume</a>
+    </li>
+      </ul>
+    </nav>
+    <button id="themeToggle" aria-label="Toggle Theme">
+  <!-- SUN (default) -->
+  <img id="sunIcon" src="sun.svg" alt="Light Mode" srcset="">
+
+  <!-- MOON (hidden initially) -->
+  <img id="moonIcon" src="moon.svg" alt="" srcset="">
+</button>
+    <a href="resume.pdf" class="download-btn" download>Download Resume</a>
+    <div class="humburger" id="humburger">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="profile-wrapper">
+            <div class="profile-glow">
+            <img src="my_professional_Photo.jpg" alt="Profile" class="profile-img" />
+            </div>
+      </div>
+      <div class="hero-text">
+        <h3>Hello, I'm</h3>
+        <h1>Meet Prajapati</h1>
+        <h2 class="role-title">And I'm a 
+        <span class="role-container">
+          <span class="roles">
+            <span>Web Developer</span>
+            <span>Android Developer</span>
+          </span>
+        </span>
+        </h2>
+        <p>I specialize in building modern, responsive websites 
+          and user-friendly web applications.I love turning ideas
+           into real, interactive digital experiences. I focus on 
+           clean design and performance to build solutions that look
+            great and work seamlessly. Let's create something impactful.
+        </p>
+  <div class="social-links">
+  <a href="https://www.linkedin.com/in/meet-prajapati-a57692357?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social" title="LinkedIn">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" loading="lazy" alt="LinkedIn" />
+  </a>
+  <a href="https://www.instagram.com/meet_07____?utm_source=qr&igsh=YWF6Z3NrdmFybzh1" target="_blank" class="social" title="Instagram">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" loading="lazy"  alt="Instagram" />
+  </a>
+  <a href="https://twitter.com/yourprofile" target="_blank" class="social" title="Twitter">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" loading="lazy"  alt="Twitter" />
+  </a>
+</div>
+
+
+        <div class="hero-buttons">
+          <a href="#" onclick="HireMe(event)" class="btn blue">Hire Me</a>
+          <a href="#contact" class="btn dark">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+  <h1 class="section-heading">About</h1>
+  <div class="about-text">
+    <p>
+      A passionate web developer skilled in HTML, CSS, JavaScript, C#, PHP, and Python, with experience in building dynamic websites.
+      Strong problem-solving abilities, database management expertise, and a keen interest in Application development and Mobile development.
+      Proven leadership in Mecia Hacks where team successfully created "Online Voting System". Also Participated in MCA Techfest and other technical events.
+    </p>
+  </div>
+</section>
+
+  <section id="Skills">
+  <h1 class="skills-heading">Skills</h1>
+  <div class="skills-container">
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" loading="lazy" /><p>C</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" loading="lazy" /><p>HTML</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" loading="lazy" /><p>CSS</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" loading="lazy" /><p>JavaScript</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" loading="lazy" /><p>Java</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" loading="lazy" /><p>ReactJS</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" loading="lazy" /><p>.NET</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" loading="lazy" /><p>C#</p></div>
+    <div class="skill-card"><img src="https://visualstudio.microsoft.com/wp-content/uploads/2021/10/Product-Icon.svg" loading="lazy"  alt="Visual Studio" /><p>Visual Studio</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" loading="lazy" /><p>Android</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" loading="lazy" /><p>PHP</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" loading="lazy" /><p>Python</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" loading="lazy" /><p>SQL</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" loading="lazy" /><p>Oracle</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" loading="lazy" /><p>NodeJS</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" loading="lazy" /><p>MongoDB</p></div>
+    <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" loading="lazy"  alt="Laravel"/><p>Laravel</p></div>
+  </div>
+</section>
+<section id="projects">
+  <h1 class="project-heading">Projects</h1>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <img src="vote.png" loading="lazy"  alt="Online Voting System">
+      <div class="project-info">
+        <h3>Online Voting System</h3>
+        <div class="tech-stack">
+          <span class="tech">HTML5</span>
+          <span class="tech">CSS</span>
+          <span class="tech">JavaScript</span>
+      </div>
+      </div>
+    </div>
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="sports.avif" loading="lazy"  alt="E-commerce Sports Website">
+      <div class="project-info">
+        <h3>E-commerce Website (Sports)</h3>
+        <div class="tech-stack">
+        <span class="tech">ASP.Net</span>
+        <span class="tech">C#</span>
+        <span class="tech">Visual Studio</span></div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="sportletix.png" loading="lazy"  alt="E-commerce Sports Website">
+      <div class="project-info">
+        <h3>Body Based Smart Sports Gear Recommendation System</h3>
+        <div class="tech-stack">
+        <span class="tech">Android Studio(java)</span>
+        <span class="tech">Firebase</span>
+        <span class="tech">ML</span></div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+  </div>
+</section>
+<section id="education">
+  <h1 class="section-heading">Education</h1>
+
+  <div class="timeline">
+    <!-- 1st -->
+    <div class="edu-card" id="one">
+      <h3>Sardar Vallabhbhai Patel Institute of Technology (SVIT)</h3>
+      <p>Master in Computer Application (MCA)</p>
+      <div class="edu-details">
+        <span><i class="ri-calendar-line"></i>  2024-2026</span>
+        <span><i class="ri-graduation-cap-line"></i>  CGPA : 8.00</span>
+      </div>
+    </div>
+
+    <!-- 2nd -->
+    <div class="edu-card" id="two">
+      <h3>Dadabhai Navroji Institute of Computer Application</h3>
+      <p>Bachelor in Computer Application (BCA)</p>
+      <div class="edu-details">
+        <span><i class="ri-calendar-line"></i>  2022-2024</span>
+        <span><i class="ri-graduation-cap-line"></i>  CGPA : 8.32</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <!-- 3rd -->
+    <div class="edu-card" id="three">
+      <h3>C.H. Vidhyalaya</h3>
+      <p>12<sup>th</sup></p>
+      <div class="edu-details">
+        <span><i class="ri-calendar-line"></i>  2020-2021</span>
+        <span><i class="ri-file-list-2-line"></i>  Per : 63.7%</span>
+      </div>
+    </div>
+
+    <!-- 4th -->
+    <div class="edu-card" id="four">
+      <h3>Sahkar Vidhyalaya</h3>
+      <p>10<sup>th</sup></p>
+      <div class="edu-details">
+        <span><i class="ri-calendar-line"></i>  2019-2020</span>
+        <span><i class="ri-file-list-2-line"></i>  Per : 61.3%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h1 class="section-heading">Contact</h1>
+  <div class="contact-info">
+    <div class="info-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"  loading="lazy" alt="Email" />
+      <h3>Email</h3>
+      <p>pmeet9174@gmail.com</p>
+    </div>
+    <div class="info-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" loading="lazy"  alt="Phone" />
+      <h3>Phone No</h3>
+      <p>+91 9023968492</p>
+    </div>
+    <div class="info-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" loading="lazy"  alt="Location" />
+      <h3>Location</h3>
+      <p>Vadodara, Gujarat, India</p>
+    </div>
+  </div>
+
+  <form class="contact-form" action="https://formspree.io/f/xzzgkjnz" method="POST">
+    <h3>send message</h3>
+    <input type="text" name="name" placeholder="Your Name" autocomplete="off" required />
+  <input type="email" name="email" placeholder="Your Email" autocomplete="off" required />
+  <input type="text" name="subject" placeholder="Subject" autocomplete="off" required />
+  <textarea name="message" placeholder="Message" id="autoTextarea" autocomplete="off" required></textarea>
+  <button type="submit" id="sendBtn" onclick="startSending()">Send Message</button>
+  </form>
+</section>
+  
+  <script src="script.js"></script>
+</body>
+</html>
