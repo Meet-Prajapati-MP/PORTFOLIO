@@ -29,11 +29,12 @@
         <li><a href="#" class="nav-link active-link">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#Skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
         <li class="mobile-download">
-        <a href="Full_Stack_Resume.pdf" download class="nav-link">Web Resume      |      </a>
+        <a href="Full_Stack_Resume.pdf" download class="nav-link">Web Resume</a>
         <a href="Android_Resume.pdf" download class="nav-link">Android Resume</a>
     </li>
       </ul>
@@ -47,7 +48,7 @@
 </button>
     <div class="resume-dropdown">
   <button class="download-btn dropdown-btn">
-    Download Resume⌄
+    Download Resume<span class="arrow">›</span>
   </button>
 
   <div class="dropdown-menu">
@@ -95,11 +96,9 @@ Let’s build mobile experiences that are impactful and future-ready.
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" loading="lazy"  alt="Instagram" />
   </a>
   <a href="https://github.com/Meet-Prajapati-MP" target="_blank" class="social" title="Github">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" loading="lazy"  alt="Github" />
+    <img class="github-square" src="github.png" style="border-radius: 6px;"  loading="lazy"  alt="Github" />
   </a>
 </div>
-
-
         <div class="hero-buttons">
           <a href="#" onclick="HireMe(event)" class="btn blue">Hire Me</a>
           <a href="#contact" class="btn dark">Contact Me</a>
@@ -141,14 +140,51 @@ Let’s build mobile experiences that are impactful and future-ready.
     <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" loading="lazy" /><p>NodeJS</p></div>
     <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" loading="lazy" /><p>MongoDB</p></div>
     <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" loading="lazy"  alt="Laravel"/><p>Laravel</p></div>
+    <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" loading="lazy"  alt="Figma"/><p>Figma</p></div>
     <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" loading="lazy" /><p>Android</p></div>
     <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" loading="lazy" /><p>React Native</p></div>
     <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" loading="lazy" /><p>Kotlin</p></div>
     <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg" loading="lazy" /><p>Firebase</p></div>
     <div class="skill-card"><img src="n8n.png" loading="lazy"  alt="n8n"/><p>n8n</p></div>
-    <div class="skill-card"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" loading="lazy"  alt="Github"/><p>Github</p></div>
+    <div class="skill-card"><img src="make.png" loading="lazy"  alt="Make"/><p>Make</p></div>
+    <div class="skill-card"><img src="FlutterFlow.png" loading="lazy"  alt="FlutterFlow"/><p>FlutterFlow</p></div>
+    <div class="skill-card"><img src="github.png" style="border-radius: 50%;" loading="lazy"  alt="Github"/><p>Github</p></div>
   </div>
 </section>
+
+<section id="experience">
+  <h1 class="experience-heading">Experience</h1>
+
+  <div class="experience-container">
+    <div class="experience-card">
+      <div class="experience-info">
+        <!-- Role -->
+        <h3>Mobile Application Development Intern</h3>
+
+        <!-- Company + Duration row -->
+        <div class="experience-meta">
+          <span class="company">Trutopay</span>
+          <span class="duration">
+            <i class="ri-calendar-line"></i>
+            Jan/26 - June/26
+          </span>
+        </div>
+
+        <!-- Tech stack (UNCHANGED) -->
+        <div class="tech-stack">
+          <span class="tech">AI Agent</span>
+          <span class="tech">FlutterFlow</span>
+          <span class="tech">Android</span>
+          <span class="tech">APIs</span>
+        </div>
+      </div>
+      <!-- Experience 1 -->
+    </div>
+  </div>
+</section>
+
+
+
 <section id="projects">
   <h1 class="project-heading">Projects</h1>
 
@@ -165,7 +201,8 @@ Let’s build mobile experiences that are impactful and future-ready.
       <a href="https://github.com/Meet-Prajapati-MP/ONLINE-VOTING-SYSTEM-PHP-"
      target="_blank"
      class="github-bar">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg
+" alt="GitHub">
     <span>GitHub</span>
   </a>
     </div>
@@ -225,6 +262,42 @@ Let’s build mobile experiences that are impactful and future-ready.
     </div>
 
     <!-- Project 4 -->
+
+<div class="project-card">
+      <img src="Any_Q.png" loading="lazy"  alt="Any_Q Application">
+      <div class="project-info">
+        <h3>Ask any question, AI Agent answers all</h3>
+        <div class="tech-stack">
+        <span class="tech">Make.com</span></div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="Color_Fetch.png" loading="lazy"  alt="TODO Application">
+      <div class="project-info">
+        <h3>Upload any image, AI Agent extract color codes and font-family</h3>
+        <div class="tech-stack">
+        <span class="tech">Make.com</span></div>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+
+
+    <div class="project-card">
+      <img src="Commentor.png" loading="lazy"  alt="TODO Application">
+      <div class="project-info">
+        <h3>Upload any code! AI Agent solve errors,add Comments and explaination</h3>
+        <div class="tech-stack">
+        <span class="tech">Make.com</span></div>
+      </div>
+    </div>
+
+    <!-- Project 6 -->
+
+    
+
+
   </div>
   
 </section>

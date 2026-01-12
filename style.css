@@ -30,6 +30,7 @@ body {
   animation-delay: 0.8s;
 }
 
+
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
@@ -64,8 +65,19 @@ body {
 
 
 .dropdown-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   border: none;
 }
+
+.dropdown-btn .arrow {
+  display: inline-block;
+  font-size: 1.6rem;
+  transform: rotate(90deg); /* makes > face down */
+  transition: transform 0.3s ease;
+}
+
 
 .dropdown-menu {
   position: absolute;
@@ -90,9 +102,33 @@ body {
 }
 
 .dropdown-menu a:hover {
-  background: #334155;
+  transition: background 0.6s, color 0.3s;
+  background: #34435bf7;
+  color: #3b82f6;
+  border-radius: 10px;
+}
+
+
+body.light-mode .dropdown-menu {
+  background: #f2f2f8;
+  box-shadow: -6px -6px 10px rgb(208, 208, 208), 1px 1px 14px #968fc4;
+}
+
+
+body.light-mode .dropdown-menu a {
+  color: #716c99;
+}
+
+body.light-mode .dropdown-menu a:hover {
+  transition: background 0.6s, color 0.3s;
+  background: #ddddde99;
   color: #3b82f6;
 }
+
+.resume-dropdown:hover .arrow{
+  transform: rotate(270deg) translateX(2px);
+}
+
 .resume-dropdown:hover .dropdown-menu {
   display: flex;
 }
@@ -112,13 +148,13 @@ body {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.6s ease;
-  background: linear-gradient(to right,#00008B,#4682B4);
+  background: linear-gradient(to bottom,#55a4e4,#b434f4);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 .download-btn:hover {
-  background: linear-gradient(to right,#4682B4,#00008B);
+  background: linear-gradient(to bottom,#b434f4,#55a4e4);
+  transition: background .6s ease;
 }
 
 #themeToggle {
@@ -183,6 +219,13 @@ body.light-mode .bar {
   opacity: 0;
   transform: translateX(-60px);
   animation: slideIn 1s forwards 0.3s;
+}
+
+body.light-mode .github-square{
+  background: #f2f2f8;
+  color: #716c99;
+  border: none;
+  box-shadow: -6px -6px 10px white,1px 1px 14px #968fc4;
 }
 
 /* Glowing blob container */
@@ -516,6 +559,11 @@ body.light-mode #sendBtn.sending {
   object-fit: cover;
   z-index: 2;
 }
+.profile-glow,
+.profile-img {
+  transition: border-radius 1.8s ease-in-out;
+}
+
 
 /* Optional pulsing animation */
 @keyframes pulse {
@@ -728,6 +776,99 @@ body.light-mode #sendBtn.sending {
   margin: 0;
   text-align: center;
 }
+
+/* Experience Section */
+#experience {
+  padding: 60px 20px;
+  background: #0f172a;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  margin-bottom: 20px;
+}
+
+body.light-mode #experience {
+  background: #f4f4f4;
+  color: #716c99;
+}
+
+body.light-mode .duration img {color: #716c99;
+}
+
+#experience.show {
+      opacity: 1;
+      transform: translateY(0);
+}
+
+
+.experience-heading {
+  text-align: center;
+  font-family: 'Audiowide','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  letter-spacing: 1.5px;
+}
+
+/* Center single card nicely */
+.experience-container {
+  display: flex;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 440px;
+  transition: transform 0.3s ease;
+}
+body.light-mode .experience-card {
+  box-shadow: -4px -4px 18px #f2f2f8, 1px 1px 14px #968fc4;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 440px;
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+
+.experience-info {
+  padding: 30px;
+  text-align: center;
+}
+.experience-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 145px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.experience-meta .company {
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.experience-meta .duration {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.85;
+}
+
+
 
 /* Project Section */
 #projects {
@@ -1088,20 +1229,62 @@ body.light-mode #sendBtn.sending {
 
 
 /* Responsive wrap & spacing */
-@media (max-width: 980px) {
+@media (max-width: 1160px) {
   .nav {
-    position: absolute;
+    position: fixed;
     top: 70px;
-    right: 0;
-    transition: top 0.4s ease-in-out;
-    background: #1e293b;
-    box-shadow: 15px 15px 10px #161b23;
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    right: 20px;
+    width: 260px;
+   background: rgb(15, 23, 42);
+   backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter:blur(16px) saturate(180%) ;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+
+    /* Hidden state */
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+    pointer-events: none;
+
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
   }
+
+  /* Show menu */
+  .nav.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-links li {
+    text-align: left;
+  }
+
+  .mobile-download {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 12px;
+    margin-top: 10px;
+  }
+  body.light-mode .mobile-download {
+    border-top: 1px solid rgba(25, 24, 24, 0.206);
+    padding-top: 12px;
+    margin-top: 10px;
+  }
+  .role-title{
+  display: block;
+}
+.role-container{
+  position: relative;
+}
+
   .resume-dropdown {
   display: none; /* hide dropdown button on mobile */
 }
@@ -1114,15 +1297,7 @@ body.light-mode #sendBtn.sending {
     box-shadow: 1px 1px 14px #968fc4;
   }
 
-  .nav.active {
-    display: flex;
-  }
   
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-  }
   #themeToggle {
     position: absolute;
     top: 27px;
@@ -1132,7 +1307,9 @@ body.light-mode #sendBtn.sending {
     display: none;
   }
   .mobile-download {
-    display: block; /* Show "Download Resume" inside menu */
+    display: flex;
+    flex-direction: column;
+    gap: 10px
   }
   .profile-glow {
   animation: pulse 2s ease-in-out infinite;
@@ -1150,7 +1327,10 @@ body.light-mode #sendBtn.sending {
   .about-text {
     font-size: 1rem;
     padding: 0 15px;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.2px;
+  }
+  .experience-meta{
+    gap:90px;
   }
   .project-card {
     width: 90%;

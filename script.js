@@ -1,3 +1,27 @@
+function ovalBlobRadius() {
+  const r = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+  return `
+    ${r(45, 65)}% ${r(35, 55)}% ${r(45, 65)}% ${r(35, 55)}% /
+    ${r(45, 65)}% ${r(45, 65)}% ${r(35, 55)}% ${r(35, 55)}%
+  `;
+}
+
+const glow = document.querySelector(".profile-glow");
+const img = document.querySelector(".profile-img");
+
+setInterval(() => {
+  const radius = ovalBlobRadius();
+  glow.style.borderRadius = radius;
+  img.style.borderRadius = radius;
+}, 2200);
+
+
+
+
+
+
+
 const hamburger = document.getElementById("humburger");
 const navbar = document.getElementById("navbar");
 const navLinks = document.querySelectorAll(".nav-link");
@@ -5,7 +29,9 @@ const navLinks = document.querySelectorAll(".nav-link");
 // Toggle navbar on hamburger click
 hamburger.addEventListener("click", () => {
   navbar.classList.toggle("active");
+  hamburger.classList.toggle("active"); // 🔥 THIS LINE
 });
+
 
 // Close navbar when clicking outside
 document.addEventListener("click", (event) => {
@@ -20,16 +46,25 @@ document.addEventListener("click", (event) => {
 // Handle nav link clicks
 navLinks.forEach((link) => {
   link.addEventListener("click", function () {
-    // 1. Remove 'active-link' from all
     navLinks.forEach((l) => l.classList.remove("active-link"));
-
-    // 2. Add 'active-link' to clicked one
     this.classList.add("active-link");
 
-    // 3. Close navbar (mobile view)
     navbar.classList.remove("active");
+    hamburger.classList.remove("active"); // ✅ RESET TO MENU
   });
 });
+
+//When user clicks menu in mobile and direct touch toggle then reset humburger icon
+document.addEventListener("click", (event) => {
+  const isClickInsideNav = navbar.contains(event.target);
+  const isClickOnHamburger = hamburger.contains(event.target);
+
+  if (!isClickInsideNav && !isClickOnHamburger) {
+    navbar.classList.remove("active");
+    hamburger.classList.remove("active"); // ✅ RESET
+  }
+});
+
 
 const sections = document.querySelectorAll("section");
   const navLinks1 = document.querySelectorAll(".nav-link");
@@ -56,83 +91,26 @@ const sections = document.querySelectorAll("section");
   );
 
   // Observe each section
-  sections.forEach(section => observern.observe(section));
+ const revealSections = document.querySelectorAll(
+  '#about, #Skills, #projects, #education, #experience, #contact'
+);
 
-const containers = document.querySelectorAll('#about');
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  });
+}, { threshold: 0.1 });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        } else {
-          entry.target.classList.remove('show'); // Remove to allow retrigger
-        }
-      });
-    }, { threshold: 0.1 });
+revealSections.forEach(section => {
+  revealObserver.observe(section);
+});
 
-    containers.forEach(container => {
-      observer.observe(about);
-    });
-const containers1 = document.querySelectorAll('#Skills');
-
-    const observer1 = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        } else {
-          entry.target.classList.remove('show'); // Remove to allow retrigger
-        }
-      });
-    }, { threshold: 0.1 });
-
-    containers1.forEach(container => {
-      observer1.observe(Skills);
-    });
-const containers2 = document.querySelectorAll('#projects');
-
-    const observer2 = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        } else {
-          entry.target.classList.remove('show'); // Remove to allow retrigger
-        }
-      });
-    }, { threshold: 0.1 });
-
-    containers2.forEach(container => {
-      observer2.observe(projects);
-    });
-const containers3 = document.querySelectorAll('#education');
-
-    const observer3 = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        } else {
-          entry.target.classList.remove('show'); // Remove to allow retrigger
-        }
-      });
-    }, { threshold: 0.1 });
-
-    containers3.forEach(container => {
-      observer3.observe(education);
-    });
-const containers4 = document.querySelectorAll('#contact');
-
-    const observer4 = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        } else {
-          entry.target.classList.remove('show'); // Remove to allow retrigger
-        }
-      });
-    }, { threshold: 0.1 });
-
-    containers1.forEach(container => {
-      observer1.observe(contact);
-    });
+    
+    
 
 const textarea = document.getElementById("autoTextarea");
 
