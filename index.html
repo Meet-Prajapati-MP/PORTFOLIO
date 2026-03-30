@@ -110,7 +110,7 @@
   <section id="about">
   <h1 class="section-heading">About</h1>
   <div class="about-text">
-    <p style="color: #cbd5e1;">
+    <p>
       Professional Mobile Application Developer with hands-on experience in designing, developing, 
       deploying, and maintaining high-quality Android and cross-platform applications using modern 
       technologies. Proficient in React Native, FlutterFlow, XML, Java, and Kotlin, with strong 
@@ -149,6 +149,7 @@
     <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" loading="lazy" /><p>React Native</p></div>
     <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" loading="lazy" /><p>Kotlin</p></div>
     <div class="skill-card"><img src="https://logo.svgcdn.com/devicon/supabase-original.svg" loading="lazy" alt="Supabase" /><p>Supabase</p></div>
+    <div class="skill-card"><img src="https://logo.svgcdn.com/devicon/railway-original.svg" loading="lazy" alt="Railway" /><p>Railway</p></div>
     <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg" loading="lazy" /><p>Firebase</p></div>
     <div class="skill-card"><img src="n8n.png" loading="lazy"  alt="n8n"/><p>n8n</p></div>
     <div class="skill-card"><img src="make.png" loading="lazy"  alt="Make"/><p>Make</p></div>
@@ -161,32 +162,40 @@
 
 <section id="experience">
   <h1 class="experience-heading">Experience</h1>
+  <p class="experience-subtitle">Internships and roles in mobile development and automation.</p>
 
   <div class="experience-container">
-    <div class="experience-card">
+    <article class="experience-card">
+      <div class="experience-card-accent" aria-hidden="true"></div>
       <div class="experience-info">
-        <!-- Role -->
-        <h3>Mobile Application Development Intern</h3>
+        <div class="experience-role-header">
+          <span class="experience-type">Internship</span>
+          <h3>Mobile Application Development Intern</h3>
+        </div>
 
-        <!-- Company + Duration row -->
         <div class="experience-meta">
-          <span class="company">Trutopay</span>
+          <span class="company">
+            <i class="ri-building-2-line" aria-hidden="true"></i>
+            Trutopay
+          </span>
           <span class="duration">
-            <i class="ri-calendar-line"></i>
-            Jan/26 - June/26
+            <i class="ri-calendar-line" aria-hidden="true"></i>
+            Jan 2026 – Jun 2026
           </span>
         </div>
 
-        <!-- Tech stack (UNCHANGED) -->
-        <div class="tech-stack">
+        <p class="experience-summary">
+          Shipping mobile experiences with FlutterFlow and Android, wiring APIs, and building AI-assisted workflows for product teams.
+        </p>
+
+        <div class="tech-stack experience-tech" aria-label="Technologies used">
           <span class="tech">AI Agent</span>
           <span class="tech">FlutterFlow</span>
           <span class="tech">Android</span>
           <span class="tech">APIs</span>
         </div>
       </div>
-      <!-- Experience 1 -->
-    </div>
+    </article>
   </div>
 </section>
 
@@ -195,163 +204,350 @@
 <section id="projects">
   <h1 class="project-heading">Projects</h1>
 
-  <div class="projects-container">
-    <div class="project-card">
-      <img src="vote.png" loading="lazy"  alt="E-commerce Sports Website">
-      <div class="project-info">
-        <h3>Online Voting System</h3>
-        <div class="tech-stack">
-        <span class="tech">HTML5</span>
-        <span class="tech">CSS3</span>
-        <span class="tech">JavaScript</span></div>
-      </div>
-      <a href="https://github.com/Meet-Prajapati-MP/ONLINE-VOTING-SYSTEM-PHP-"
-     target="_blank"
-     class="github-bar">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg
-" alt="GitHub">
-    <span>GitHub</span>
-  </a>
+  <div class="projects-tabs-wrap" role="presentation">
+    <div class="projects-tabs" role="tablist" aria-label="Filter projects by category">
+      <button type="button" class="projects-tab is-active" role="tab" id="projects-tab-all" aria-selected="true" aria-controls="projects-panel" data-filter="all">All</button>
+      <button type="button" class="projects-tab" role="tab" id="projects-tab-website" aria-selected="false" aria-controls="projects-panel" data-filter="website">Websites</button>
+      <button type="button" class="projects-tab" role="tab" id="projects-tab-application" aria-selected="false" aria-controls="projects-panel" data-filter="application">Applications</button>
+      <button type="button" class="projects-tab" role="tab" id="projects-tab-ai-agent" aria-selected="false" aria-controls="projects-panel" data-filter="ai-agent">AI Agents</button>
     </div>
+  </div>
 
-    <!-- Project 1 -->
-    <div class="project-card">
-      <img src="sports.avif" loading="lazy"  alt="E-commerce Sports Website">
-      <div class="project-info">
-        <h3>E-commerce Website (Sports)</h3>
-        <div class="tech-stack">
-        <span class="tech">ASP.Net</span>
-        <span class="tech">C#</span>
-        <span class="tech">Visual Studio</span></div>
+  <!-- Websites: set .project-live-link href to your deployed URL (+ target="_blank" if external). Applications: set .project-apk-link href to your .apk file (download attribute triggers save). -->
+  <div class="projects-container" id="projects-panel" role="tabpanel" aria-label="Project cards">
+    <article class="project-card" data-category="website">
+      <div class="project-card-media">
+        <img src="Web_Trustopay.png" loading="lazy" alt="Trustopay">
       </div>
-      <a href="https://github.com/Meet-Prajapati-MP/SPORTPLUS-.NET-WEBSITE-"
-     target="_blank"
-     class="github-bar">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub">
-    <span>GitHub</span>
-  </a>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card">
-      <img src="sportletix.png" loading="lazy"  alt="Sportletix">
       <div class="project-info">
-        <h3>Body Based Smart Sports Gear Recommendation System</h3>
+        <h3>Trustopay - Invoice System</h3>
         <div class="tech-stack">
-        <span class="tech">Android Studio(java)</span>
-        <span class="tech">Firebase</span>
-        <span class="tech">ML</span></div>
+          <span class="tech">React.js</span>
+          <span class="tech">TypeScript</span>
+          <span class="tech">Railway</span>
+          <span class="tech">Supabase</span>
+          <span class="tech">Postgray SQL</span>
+        </div>
       </div>
-      <a href="https://github.com/Meet-Prajapati-MP/SPORTLETIX-ANDROID-APP-"
-     target="_blank"
-     class="github-bar">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub">
-    <span>GitHub</span>
-  </a>
-    </div>
+      <div class="project-card-actions">
+        <a class="project-action-btn project-live-link" href="https://magic-patterns.vercel.app/"><i class="ri-external-link-line" aria-hidden="true"></i><span>Live Link</span></a>
+        <a class="project-action-btn project-source-link" href="https://github.com/Meet-Prajapati-MP/Magic-Patterns" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i><span>Source</span></a>
+      </div>
+    </article>
 
-    <!-- Project 3 -->
-     <div class="project-card">
-      <img src="TODO.png" loading="lazy"  alt="TODO Application">
+    <article class="project-card" data-category="website">
+      <div class="project-card-media">
+        <img src="Orion.png" loading="lazy" alt="Orion">
+      </div>
       <div class="project-info">
-        <h3>Smart ToDo List Application</h3>
+        <h3>Orion - Multi AI Agent System</h3>
         <div class="tech-stack">
-        <span class="tech">Android Studio</span>
-        <span class="tech">Kotlin</span>
-        <span class="tech">Firebase</span></div>
+          <span class="tech">HTML5</span>
+          <span class="tech">CSS3</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">Python</span>
+        </div>
       </div>
-      <a href="https://github.com/Meet-Prajapati-MP/TODO"
-     target="_blank"
-     class="github-bar">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub">
-    <span>GitHub</span>
-  </a>
-    </div>
+      <div class="project-card-actions">
+        <a class="project-action-btn project-live-link" href="https://orion-zeta-coral.vercel.app/"><i class="ri-external-link-line" aria-hidden="true"></i><span>Live Link</span></a>
+        <a class="project-action-btn project-source-link" href="https://github.com/Meet-Prajapati-MP/Orion-" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i><span>Source</span></a>
+      </div>
+    </article>
 
-    <!-- Project 4 -->
-
-<div class="project-card">
-      <img src="Any_Q.png" loading="lazy"  alt="Any_Q Application">
+    <article class="project-card" data-category="website">
+      <div class="project-card-media">
+        <img src="DigitalGujarat.png" loading="lazy" alt="DigitalGujarat">
+      </div>
       <div class="project-info">
-        <h3>Ask any question, AI Agent answers all</h3>
+        <h3>Digital Gujarat -digital marketing</h3>
         <div class="tech-stack">
-        <span class="tech">Make.com</span></div>
+          <span class="tech">HTML5</span>
+          <span class="tech">CSS</span>
+        </div>
       </div>
-    </div>
-
-    <div class="project-card">
-      <img src="Color_Fetch.png" loading="lazy"  alt="TODO Application">
-      <div class="project-info">
-        <h3>Upload any image, AI Agent extract color codes and font-family</h3>
-        <div class="tech-stack">
-        <span class="tech">Make.com</span></div>
+      <div class="project-card-actions">
+        <a class="project-action-btn project-live-link" href="https://complete-website-li4r.vercel.app/"><i class="ri-external-link-line" aria-hidden="true"></i><span>Live Link</span></a>
+        <a class="project-action-btn project-source-link" href="https://github.com/Meet-Prajapati-MP/complete-website" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i><span>Source</span></a>
       </div>
-    </div>
-
-    <!-- Project 5 -->
-
-
-    <div class="project-card">
-      <img src="Commentor.png" loading="lazy"  alt="TODO Application">
-      <div class="project-info">
-        <h3>Upload any code! AI Agent solve errors,add Comments and explaination</h3>
-        <div class="tech-stack">
-        <span class="tech">Make.com</span></div>
-      </div>
-    </div>
-
-    <!-- Project 6 -->
+    </article>
 
     
 
+    <article class="project-card" data-category="website">
+      <div class="project-card-media">
+        <img src="vote.png" loading="lazy" alt="Online Voting System">
+      </div>
+      <div class="project-info">
+        <h3>Online Voting System</h3>
+        <div class="tech-stack">
+          <span class="tech">HTML5</span>
+          <span class="tech">CSS3</span>
+          <span class="tech">JavaScript</span>
+        </div>
+      </div>
+      <div class="project-card-actions">
+        <a class="project-action-btn project-live-link" href="#projects"><i class="ri-external-link-line" aria-hidden="true"></i><span>Live Link</span></a>
+        <a class="project-action-btn project-source-link" href="https://github.com/Meet-Prajapati-MP/ONLINE-VOTING-SYSTEM-PHP-" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i><span>Source</span></a>
+      </div>
+    </article>
 
+    <article class="project-card" data-category="website">
+      <div class="project-card-media">
+        <img src="Portfolio.png" loading="lazy" alt="Portfolio">
+      </div>
+      <div class="project-info">
+        <h3>Personal Portfolio</h3>
+        <div class="tech-stack">
+          <span class="tech">HTML5</span>
+          <span class="tech">CSS3</span>
+          <span class="tech">JavaScript</span>
+        </div>
+      </div>
+      <div class="project-card-actions">
+        <a class="project-action-btn project-live-link" href="https://svit-portfolio.netlify.app/"><i class="ri-external-link-line" aria-hidden="true"></i><span>Live Link</span></a>
+        <a class="project-action-btn project-source-link" href="https://github.com/Meet-Prajapati-MP/PORTFOLIO" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i><span>Source</span></a>
+      </div>
+    </article>
+
+    <article class="project-card" data-category="website">
+      <div class="project-card-media">
+        <img src="sports.avif" loading="lazy" alt="E-commerce Sports Website">
+      </div>
+      <div class="project-info">
+        <h3>E-commerce Website (Sports)</h3>
+        <div class="tech-stack">
+          <span class="tech">ASP.Net</span>
+          <span class="tech">C#</span>
+          <span class="tech">Visual Studio</span>
+        </div>
+      </div>
+      <div class="project-card-actions">
+        <a class="project-action-btn project-live-link" href="#projects"><i class="ri-external-link-line" aria-hidden="true"></i><span>Live Link</span></a>
+        <a class="project-action-btn project-source-link" href="https://github.com/Meet-Prajapati-MP/SPORTPLUS-.NET-WEBSITE-" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i><span>Source</span></a>
+      </div>
+    </article>
+
+    <article class="project-card" data-category="application">
+      <div class="project-card-media">
+        <img src="Trustopay.png" loading="lazy" alt="Trustopay App">
+      </div>
+      <div class="project-info">
+        <h3>Trustopay - Invoice/Quotation/Recurring Management System</h3>
+        <div class="tech-stack">
+          <span class="tech">React Native</span>
+          <span class="tech">Supabase</span>
+          <span class="tech">Railway</span>
+          <span class="tech">PostgraySQL</span>
+          <span class="tech">API</span>
+          <span class="tech">Security</span>
+        </div>
+      </div>
+      <div class="project-card-actions">
+        <!-- Set href to your APK path (same folder, /apk/..., or a release URL) and keep the download attribute -->
+        <a class="project-action-btn project-apk-link" href="application-4a2c45e6-60fd-4282-88c9-0951a3351715.apk" download><i class="ri-download-2-line" aria-hidden="true"></i><span>APK</span></a>
+        <a class="project-action-btn project-source-link" href="https://github.com/Meet-Prajapati-MP/React-Native-InvoiceBill" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i><span>Source</span></a>
+      </div>
+    </article>
+
+    <article class="project-card" data-category="application">
+      <div class="project-card-media">
+        <img src="sportletix.png" loading="lazy" alt="Sportletix app">
+      </div>
+      <div class="project-info">
+        <h3>Body Based Smart Sports Gear Recommendation System</h3>
+        <div class="tech-stack">
+          <span class="tech">Android Studio</span>
+          <span class="tech">Java</span>
+          <span class="tech">Firebase</span>
+          <span class="tech">Machine Learning</span>
+          <span class="tech">Signed APK Deployment</span>
+        </div>
+      </div>
+      <div class="project-card-actions">
+        <!-- Set href to your APK path (same folder, /apk/..., or a release URL) and keep the download attribute -->
+        <a class="project-action-btn project-apk-link" href="SPORTLETIX.apk" download><i class="ri-download-2-line" aria-hidden="true"></i><span>APK</span></a>
+        <a class="project-action-btn project-source-link" href="https://github.com/Meet-Prajapati-MP/SPORTLETIX-ANDROID-APP-" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i><span>Source</span></a>
+      </div>
+    </article>
+
+    <article class="project-card" data-category="application">
+      <div class="project-card-media">
+        <img src="ToDo.png" loading="lazy" alt="Smart ToDo List Application">
+      </div>
+      <div class="project-info">
+        <h3>Smart ToDo List Application</h3>
+        <div class="tech-stack">
+          <span class="tech">Android Studio</span>
+          <span class="tech">Kotlin</span>
+          <span class="tech">Firebase</span>
+          <span class="tech">Signed APK Deployment</span> 
+        </div>
+      </div>
+      <div class="project-card-actions">
+        <a class="project-action-btn project-apk-link" href="app-debug.apk" download><i class="ri-download-2-line" aria-hidden="true"></i><span>APK</span></a>
+        <a class="project-action-btn project-source-link" href="https://github.com/Meet-Prajapati-MP/TODO" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill" aria-hidden="true"></i><span>Source</span></a>
+      </div>
+    </article>
+
+    <article class="project-card" data-category="ai-agent">
+      <div class="project-card-media">
+        <img src="WhatsApp_AI_Agent.png" loading="lazy" alt="WhatsApp AI Agent">
+      </div>
+      <div class="project-info">
+        <h3>AI agent for startup grants & updates, with a Pro Plan for real-time alerts and 
+          personalized insights.</h3>
+        <div class="tech-stack">
+          <span class="tech">Make.com</span>
+          <span class="tech">Business WhatsApp</span>
+          <span class="tech">AI Sensy</span>
+          <span class="tech">Facebook Manager</span>
+          <span class="tech">Airtable</span>
+        </div>
+      </div>
+      <div class="project-card-actions project-card-actions--empty" aria-hidden="true"></div>
+    </article>
+
+    <article class="project-card" data-category="ai-agent">
+      <div class="project-card-media">
+        <img src="Any_Q.png" loading="lazy" alt="Any_Q AI agent">
+      </div>
+      <div class="project-info">
+        <h3>The AI Agent provides comprehensive answers to all user questions.</h3>
+        <div class="tech-stack">
+          <span class="tech">Make.com</span>
+        </div>
+      </div>
+      <div class="project-card-actions project-card-actions--empty" aria-hidden="true"></div>
+    </article>
+
+    <article class="project-card" data-category="ai-agent">
+      <div class="project-card-media">
+        <img src="Color_Fetch.png" loading="lazy" alt="Color and font extraction AI agent">
+      </div>
+      <div class="project-info">
+        <h3>Users can upload any image, and the AI Agent will extract relevant color codes and font families.</h3>
+        <div class="tech-stack">
+          <span class="tech">Make.com</span>
+        </div>
+      </div>
+      <div class="project-card-actions project-card-actions--empty" aria-hidden="true"></div>
+    </article>
+
+    <article class="project-card" data-category="ai-agent">
+      <div class="project-card-media">
+        <img src="Commentor.png" loading="lazy" alt="Code commentor AI agent">
+      </div>
+      <div class="project-info">
+        <h3>Uploaded code snippets can be analyzed by the AI Agent to identify and resolve errors, as well as to add comments and explanations.</h3>
+        <div class="tech-stack">
+          <span class="tech">Make.com</span>
+        </div>
+      </div>
+      <div class="project-card-actions project-card-actions--empty" aria-hidden="true"></div>
+    </article>
   </div>
-  
+
+  <script>
+    (function () {
+      var root = document.getElementById("projects");
+      if (!root) return;
+      var STORAGE_KEY = "portfolio-projects-tab";
+      var VALID = ["all", "website", "application", "ai-agent"];
+      var tabs = root.querySelectorAll(".projects-tab");
+      var cards = root.querySelectorAll(".project-card[data-category]");
+      var grid = root.querySelector(".projects-container");
+
+      function setActiveTab(filter) {
+        tabs.forEach(function (t) {
+          var on = t.getAttribute("data-filter") === filter;
+          t.classList.toggle("is-active", on);
+          t.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        cards.forEach(function (card) {
+          var cat = card.getAttribute("data-category");
+          var show = filter === "all" || cat === filter;
+          card.classList.toggle("is-project-hidden", !show);
+          card.setAttribute("aria-hidden", show ? "false" : "true");
+        });
+        try {
+          localStorage.setItem(STORAGE_KEY, filter);
+        } catch (e) {}
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          var f = tab.getAttribute("data-filter");
+          if (!f) return;
+          if (grid) {
+            grid.classList.add("projects-grid--filtering");
+            window.requestAnimationFrame(function () {
+              setActiveTab(f);
+            });
+            window.setTimeout(function () {
+              grid.classList.remove("projects-grid--filtering");
+            }, 280);
+          } else {
+            setActiveTab(f);
+          }
+        });
+      });
+
+      var initial = "all";
+      try {
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved && VALID.indexOf(saved) !== -1) initial = saved;
+      } catch (e) {}
+      setActiveTab(initial);
+    })();
+  </script>
 </section>
 <section id="education">
   <h1 class="section-heading">Education</h1>
+  <p class="education-subtitle">Formal training in computer applications—from postgraduate studies to school milestones.</p>
 
-  <div class="timeline">
-    <!-- 1st -->
-    <div class="edu-card" id="one">
-      <h3>Sardar Vallabhbhai Patel Institute of Technology (SVIT)</h3>
-      <p>Master in Computer Application (MCA)</p>
-      <div class="edu-details">
-        <span><i class="ri-calendar-line"></i>  2024-2026</span>
-        <span><i class="ri-graduation-cap-line"></i>  CGPA : 8.00</span>
-      </div>
+  <div class="education-layout">
+    <div class="timeline">
+      <article class="edu-card" id="one">
+        <span class="edu-level">Postgraduate</span>
+        <h3>Sardar Vallabhbhai Patel Institute of Technology (SVIT)</h3>
+        <p class="edu-degree">Master in Computer Application (MCA)</p>
+        <div class="edu-details">
+          <span><i class="ri-calendar-line" aria-hidden="true"></i>2024–2026</span>
+          <span><i class="ri-graduation-cap-line" aria-hidden="true"></i>CGPA 8.00</span>
+        </div>
+      </article>
+
+      <article class="edu-card" id="two">
+        <span class="edu-level">Undergraduate</span>
+        <h3>Dadabhai Navroji Institute of Computer Application</h3>
+        <p class="edu-degree">Bachelor in Computer Application (BCA)</p>
+        <div class="edu-details">
+          <span><i class="ri-calendar-line" aria-hidden="true"></i>2022–2024</span>
+          <span><i class="ri-graduation-cap-line" aria-hidden="true"></i>CGPA 8.32</span>
+        </div>
+      </article>
     </div>
 
-    <!-- 2nd -->
-    <div class="edu-card" id="two">
-      <h3>Dadabhai Navroji Institute of Computer Application</h3>
-      <p>Bachelor in Computer Application (BCA)</p>
-      <div class="edu-details">
-        <span><i class="ri-calendar-line"></i>  2022-2024</span>
-        <span><i class="ri-graduation-cap-line"></i>  CGPA : 8.32</span>
-      </div>
-    </div>
-  </div>
+    <div class="timeline timeline--secondary">
+      <article class="edu-card" id="three">
+        <span class="edu-level">Higher secondary</span>
+        <h3>C.H. Vidhyalaya</h3>
+        <p class="edu-degree">12<sup>th</sup></p>
+        <div class="edu-details">
+          <span><i class="ri-calendar-line" aria-hidden="true"></i>2020–2021</span>
+          <span><i class="ri-file-list-2-line" aria-hidden="true"></i>63.7%</span>
+        </div>
+      </article>
 
-  <div class="timeline">
-    <!-- 3rd -->
-    <div class="edu-card" id="three">
-      <h3>C.H. Vidhyalaya</h3>
-      <p>12<sup>th</sup></p>
-      <div class="edu-details">
-        <span><i class="ri-calendar-line"></i>  2020-2021</span>
-        <span><i class="ri-file-list-2-line"></i>  Per : 63.7%</span>
-      </div>
-    </div>
-
-    <!-- 4th -->
-    <div class="edu-card" id="four">
-      <h3>Sahkar Vidhyalaya</h3>
-      <p>10<sup>th</sup></p>
-      <div class="edu-details">
-        <span><i class="ri-calendar-line"></i>  2019-2020</span>
-        <span><i class="ri-file-list-2-line"></i>  Per : 61.3%</span>
-      </div>
+      <article class="edu-card" id="four">
+        <span class="edu-level">Secondary</span>
+        <h3>Sahkar Vidhyalaya</h3>
+        <p class="edu-degree">10<sup>th</sup></p>
+        <div class="edu-details">
+          <span><i class="ri-calendar-line" aria-hidden="true"></i>2019–2020</span>
+          <span><i class="ri-file-list-2-line" aria-hidden="true"></i>61.3%</span>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -359,21 +555,27 @@
 <section id="contact">
   <h1 class="section-heading">Contact</h1>
   <div class="contact-info">
-    <div class="info-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"  loading="lazy" alt="Email" />
+    <article class="info-card">
+      <div class="info-card-icon" aria-hidden="true">
+        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" loading="lazy" alt="" />
+      </div>
       <h3>Email</h3>
-      <p>pmeet9174@gmail.com</p>
-    </div>
-    <div class="info-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" loading="lazy"  alt="Phone" />
-      <h3>Phone No</h3>
-      <p>+91 9023968492</p>
-    </div>
-    <div class="info-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" loading="lazy"  alt="Location" />
+      <p><a class="info-card-value" href="mailto:pmeet9174@gmail.com">pmeet9174@gmail.com</a></p>
+    </article>
+    <article class="info-card">
+      <div class="info-card-icon" aria-hidden="true">
+        <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" loading="lazy" alt="" />
+      </div>
+      <h3>Phone</h3>
+      <p><a class="info-card-value" href="tel:+919023968492">+91 9023968492</a></p>
+    </article>
+    <article class="info-card">
+      <div class="info-card-icon" aria-hidden="true">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" loading="lazy" alt="" />
+      </div>
       <h3>Location</h3>
-      <p>Vadodara, Gujarat, India</p>
-    </div>
+      <p class="info-card-value info-card-value--static">Vadodara, Gujarat, India</p>
+    </article>
   </div>
 
   <form class="contact-form" action="https://formspree.io/f/xzzgkjnz" method="POST">
@@ -382,7 +584,7 @@
   <input type="email" name="email" placeholder="Your Email" autocomplete="off" required />
   <input type="text" name="subject" placeholder="Subject" autocomplete="off" required />
   <textarea name="message" placeholder="Message" id="autoTextarea" autocomplete="off" required></textarea>
-  <button type="submit" id="sendBtn" onclick="startSending()">Send Message</button>
+  <button type="submit" id="sendBtn">Send Message</button>
   </form>
 </section>
   

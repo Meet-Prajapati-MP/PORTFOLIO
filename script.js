@@ -95,15 +95,18 @@ const sections = document.querySelectorAll("section");
   '#about, #Skills, #projects, #education, #experience, #contact'
 );
 
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
-  });
-}, { threshold: 0.1 });
+/* One-way reveal: tall sections can drop below threshold while scrolling; removing .show
+   hid the whole block (opacity:0). Never remove .show after first reveal; threshold:0 for any pixel. */
+const revealObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  { threshold: 0 }
+);
 
 revealSections.forEach(section => {
   revealObserver.observe(section);
@@ -165,13 +168,26 @@ themeToggle.addEventListener("click", () => {
 
 function startSending() {
   const btn = document.getElementById("sendBtn");
+  if (!btn) return;
   btn.classList.add("sending");
   btn.textContent = "Sending...";
 
-  // Simulate sending complete
   setTimeout(() => {
     btn.classList.remove("sending");
-    btn.textContent = "Send";
+    btn.textContent = "Send Message";
   }, 6000);
 }
+
+(function () {
+  const form = document.querySelector(".contact-form");
+  if (!form) return;
+  form.addEventListener("submit", function (e) {
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      form.reportValidity();
+      return;
+    }
+    startSending();
+  });
+})();
 
