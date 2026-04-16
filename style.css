@@ -4,8 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* Single vertical scroll: overflow-x:hidden on BOTH html and body forces overflow-y:auto on
-   each → two vertical scrollbars and wheel/touch fighting. Clip only html; body stays default. */
+/* Keep one page scroller and prevent sideways page scroll. */
 html {
   scroll-padding-top: 100px;
   max-width: 100%;
@@ -26,6 +25,7 @@ body {
   background-color: #0f172a;
   color: #ffffff;
   max-width: 100%;
+  overflow-x: clip;
 }
 
 /* About / hero bio copy — same slate in light & dark (matches design reference) */
@@ -990,6 +990,32 @@ body.light-mode #sendBtn.sending {
   object-fit: contain;
 }
 
+/* Paperclip AI: inline SVG (official path) — external favicon.svg used prefers-color-scheme and
+   drew near-black on light OS, which looked like a black box on dark cards. */
+.skill-card--paperclip .skill-card__paperclip-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+  color: #7dd3fc;
+}
+
+body.light-mode .skill-card--paperclip .skill-card__paperclip-icon {
+  color: #4f46e5;
+}
+
+.skill-card--openrouter .skill-card__openrouter-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+  color: #7dd3fc;
+}
+
+body.light-mode .skill-card--openrouter .skill-card__openrouter-icon {
+  color: #4f46e5;
+}
+
 .skill-card p {
   color: #fff;
   font-size: 10px;
@@ -1913,7 +1939,7 @@ a.info-card-value:focus-visible {
   .nav {
     position: fixed;
     top: 70px;
-    right: 20px;
+    right: -320px;
     width: 260px;
    background: rgb(15, 23, 42);
    backdrop-filter: blur(16px) saturate(180%);
@@ -1922,20 +1948,19 @@ a.info-card-value:focus-visible {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     padding: 20px;
 
-    /* Hidden: move fully off-screen to the right (translateX(40px) left overflow on the page) */
+    /* Hidden off-canvas without transform overflow */
     opacity: 0;
-    transform: translateX(calc(100% + 20px));
     pointer-events: none;
 
     transition:
       opacity 0.35s ease,
-      transform 0.35s ease;
+      right 0.35s ease;
   }
 
   /* Show menu */
   .nav.active {
+    right: 20px;
     opacity: 1;
-    transform: translateX(0);
     pointer-events: auto;
   }
 
