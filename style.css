@@ -1016,6 +1016,18 @@ body.light-mode .skill-card--openrouter .skill-card__openrouter-icon {
   color: #4f46e5;
 }
 
+.skill-card--semantic-kernel .skill-card__semantic-kernel-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+  color: #7dd3fc;
+}
+
+body.light-mode .skill-card--semantic-kernel .skill-card__semantic-kernel-icon {
+  color: #4f46e5;
+}
+
 .skill-card p {
   color: #fff;
   font-size: 10px;
