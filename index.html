@@ -78,15 +78,15 @@
         <h3>Hello, I'm</h3>
         <h1>Meet Prajapati</h1>
         <h2 class="role-title">And I'm a
-          <span class="role-container">Mobile App Development Intern
+          <span class="role-container">Mobile App Development & AI Automation Engineer Intern
           </span>
         </h2>
-        <p>I specialize in building modern, high-performance mobile applications with intuitive and
-          engaging user experiences. I enjoy transforming ideas into reliable, interactive apps with
-          a strong focus on clean UI, smooth performance, and scalable architecture. Alongside mobile
-          development, I design and develop intelligent AI agents using n8n to automate workflows and
-          enhance application capabilities. My goal is to create mobile solutions that are efficient,
-          impactful, and future-ready.
+        <p>I build intelligent AI agents and modern mobile applications with equal focus on innovation,
+          reliability, and user impact. Using platforms like n8n and Make, I develop practical
+          automation workflows that connect tools, reduce manual effort, and scale business operations.
+          At the same time, I create high-performance Android and cross-platform mobile apps with clean
+          UI, smooth performance, and maintainable architecture. My goal is to deliver digital products
+          that are smart, efficient, and future-ready.
 
         </p>
         <div class="social-links">
@@ -115,16 +115,21 @@
     <h1 class="section-heading">About</h1>
     <div class="about-text">
       <p>
-        Professional Mobile Application Developer with hands-on experience in designing, developing,
-        deploying, and maintaining high-quality Android and cross-platform applications using modern
-        technologies. Proficient in React Native, FlutterFlow, XML, Java, and Kotlin, with strong
-        expertise in Android Studio, GitHub, and Google Play Store APK deployment. Experienced in building
-        scalable, user-friendly mobile solutions with a focus on clean architecture, UI/UX design,
-        and performance optimization.<br /><br />
+        I'm an AI Agent and Mobile Application Developer with hands-on experience building intelligent
+        automation solutions and high-performance mobile products for real business impact.<br /><br />
 
-        In addition to mobile development, I design and develop AI agents and automation workflows
-        using tools like n8n and Make.com, delivering intelligent, scalable, and business-focused
-        solutions.
+        <strong>AI Agent & Automation:</strong> I design and deploy intelligent workflow automations using
+        n8n and Make.com to streamline operations, connect critical platforms, and empower teams with
+        faster decision-making. I build practical, scalable automations that reduce manual effort and
+        deliver measurable business value.<br /><br />
+
+        <strong>Mobile Development:</strong> I develop production-ready Android and cross-platform mobile
+        applications using React Native, FlutterFlow, XML, Java, and Kotlin. With deep expertise in
+        Android Studio, GitHub, and Google Play Store deployment, I create scalable, user-friendly apps
+        built on clean architecture, excellent UI/UX design, and strong performance optimization.<br /><br />
+
+        My approach combines technical excellence with business focus—delivering products that are
+        efficient, maintainable, and ready to scale.
       </p>
     </div>
   </section>
@@ -138,6 +143,9 @@
       </div>
       <div class="skill-card"><img src="make.png" loading="lazy" alt="Make" />
         <p>Make</p>
+      </div>
+      <div class="skill-card"><img src="https://cdn.simpleicons.org/zapier/FF4F00" loading="lazy" alt="Zapier" />
+        <p>Zapier</p>
       </div>
       <div class="skill-card skill-card--semantic-kernel">
         <svg class="skill-card__semantic-kernel-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -501,6 +509,12 @@
       <article class="project-card" data-category="application">
         <div class="project-card-media">
           <img src="Curiosity.png" loading="lazy" alt="Curiosity">
+          <button type="button" class="project-certificate-btn" data-open-certificate="curiosity-certificate-modal"
+            aria-controls="curiosity-certificate-modal" aria-haspopup="dialog" aria-label="View Certificate"
+            title="View Certificate">
+            <i class="ri-award-line" aria-hidden="true"></i>
+            <span>Certificate</span>
+          </button>
         </div>
         <div class="project-info">
           <h3>Curiosity Hub - Innovation Submission &  Experience sharing Platform</h3>
@@ -662,6 +676,19 @@
       </article>
     </div>
 
+    <div class="certificate-modal" id="curiosity-certificate-modal" role="dialog" aria-modal="true"
+      aria-labelledby="curiosity-certificate-title" hidden>
+      <div class="certificate-modal__backdrop" data-close-certificate></div>
+      <div class="certificate-modal__panel">
+        <button type="button" class="certificate-modal__close" data-close-certificate aria-label="Close certificate">
+          <i class="ri-close-line" aria-hidden="true"></i>
+        </button>
+        <p class="certificate-modal__label">Certificate</p>
+        <h3 id="curiosity-certificate-title">Curiosity Hub - Sarjan Certificate</h3>
+        <img src="Sarjan_certi.jpg" loading="lazy" alt="Curiosity Hub certificate issued by Sarjan">
+      </div>
+    </div>
+
     <script>
       (function () {
         var root = document.getElementById("projects");
@@ -669,6 +696,32 @@
         var tabs = root.querySelectorAll(".projects-tab");
         var cards = root.querySelectorAll(".project-card[data-category]");
         var grid = root.querySelector(".projects-container");
+        var certificateButtons = root.querySelectorAll("[data-open-certificate]");
+        var openModal = null;
+        var lastFocusedElement = null;
+
+        function closeCertificateModal() {
+          if (!openModal) return;
+          openModal.hidden = true;
+          document.body.classList.remove("certificate-modal-open");
+          if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+            lastFocusedElement.focus();
+          }
+          openModal = null;
+        }
+
+        function showCertificateModal(modalId, trigger) {
+          var modal = document.getElementById(modalId);
+          if (!modal) return;
+          lastFocusedElement = trigger || document.activeElement;
+          openModal = modal;
+          modal.hidden = false;
+          document.body.classList.add("certificate-modal-open");
+          var closeBtn = modal.querySelector(".certificate-modal__close");
+          if (closeBtn) {
+            closeBtn.focus();
+          }
+        }
 
         function setActiveTab(filter) {
           tabs.forEach(function (t) {
@@ -700,6 +753,27 @@
               setActiveTab(f);
             }
           });
+        });
+
+        certificateButtons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var modalId = btn.getAttribute("data-open-certificate");
+            if (!modalId) return;
+            showCertificateModal(modalId, btn);
+          });
+        });
+
+        root.addEventListener("click", function (event) {
+          if (!openModal) return;
+          if (event.target.closest("[data-close-certificate]")) {
+            closeCertificateModal();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeCertificateModal();
+          }
         });
 
         setActiveTab("all");

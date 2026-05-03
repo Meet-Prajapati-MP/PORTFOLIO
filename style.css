@@ -812,7 +812,7 @@ body.light-mode #sendBtn.sending {
 }
 .hero-text h2 {
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   opacity: 0;
   transform: translateX(60px);
   animation: slideIn 1s forwards 0.3s;
@@ -821,12 +821,12 @@ body.light-mode #sendBtn.sending {
   color: #3b82f6;
 }
 .role-title{
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: inline;
+  line-height: 1.3;
 }
 .role-container{
   position: relative;
+  display: inline;
 }
 
 .hero-text p {
@@ -1264,7 +1264,7 @@ body.light-mode #experience .experience-tech .tech {
 }
 #projects.show {
       opacity: 1;
-      transform: translateY(0);
+  transform: none;
 }
 .project-heading{
   text-align: center;
@@ -1543,6 +1543,161 @@ body.light-mode #experience .experience-tech .tech {
 #projects .project-source-link:hover {
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
+}
+
+#projects .project-certificate-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(251, 146, 60, 0.7);
+  background: linear-gradient(145deg, #1e2a3a, #1a2332);
+  color: #fbbf24;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(249, 115, 22, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+#projects .project-certificate-btn i {
+  font-size: 1rem;
+}
+
+#projects .project-certificate-btn:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(145deg, #253544, #1e2a3a);
+  box-shadow: 0 12px 28px rgba(249, 115, 22, 0.45);
+}
+
+#projects .project-certificate-btn:focus-visible {
+  outline: 2px solid #fdba74;
+  outline-offset: 2px;
+}
+
+body.light-mode #projects .project-certificate-btn {
+  border-color: rgba(234, 88, 12, 0.5);
+  background: linear-gradient(145deg, #fef3c7, #fde68a);
+  color: #92400e;
+  box-shadow: 0 10px 24px rgba(234, 88, 12, 0.3);
+}
+
+body.light-mode #projects .project-certificate-btn:hover {
+  background: linear-gradient(145deg, #fef08a, #fde68a);
+  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.4);
+}
+
+body.certificate-modal-open {
+  overflow: hidden;
+}
+
+#projects .certificate-modal[hidden] {
+  display: none;
+}
+
+#projects .certificate-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#projects .certificate-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.74);
+  backdrop-filter: blur(4px);
+}
+
+#projects .certificate-modal__panel {
+  position: relative;
+  width: min(92vw, 780px);
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  background: linear-gradient(175deg, rgba(30, 41, 59, 0.98), rgba(15, 23, 42, 0.98));
+  box-shadow: 0 20px 64px rgba(15, 23, 42, 0.55);
+  padding: 20px 20px 16px;
+  z-index: 1;
+}
+
+#projects .certificate-modal__label {
+  margin: 0;
+  color: #7dd3fc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+#projects .certificate-modal h3 {
+  margin: 8px 0 16px;
+  color: #f8fafc;
+  font-size: 1.12rem;
+  line-height: 1.4;
+}
+
+#projects .certificate-modal img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+#projects .certificate-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+#projects .certificate-modal__close i {
+  font-size: 1.15rem;
+}
+
+body.light-mode #projects .certificate-modal__backdrop {
+  background: rgba(30, 41, 59, 0.5);
+}
+
+body.light-mode #projects .certificate-modal__panel {
+  background: linear-gradient(180deg, #ffffff 0%, #f2f2f8 100%);
+  border: 1px solid rgba(150, 143, 196, 0.35);
+}
+
+body.light-mode #projects .certificate-modal__label {
+  color: #4f46e5;
+}
+
+body.light-mode #projects .certificate-modal h3 {
+  color: #2d2a55;
+}
+
+body.light-mode #projects .certificate-modal img {
+  border-color: rgba(150, 143, 196, 0.35);
+}
+
+body.light-mode #projects .certificate-modal__close {
+  background: #ffffff;
+  color: #3a3568;
+  border-color: rgba(150, 143, 196, 0.35);
 }
 
 #education {
@@ -1996,10 +2151,12 @@ a.info-card-value:focus-visible {
     margin-top: 10px;
   }
   .role-title{
-  display: block;
+  display: inline;
+  line-height: 1.3;
 }
 .role-container{
   position: relative;
+  display: inline;
 }
 
   .resume-dropdown {
